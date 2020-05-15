@@ -20,5 +20,15 @@ describe '#Definition' do
     end
   end
 
+  describe('.all') do
+    it('returns an array of all definitions') do
+      definition1 = Definition.new({:name => "The USS Enterprise in a galaxy class starship of the United Federation of Planets.  It has a registered as NCC-1701-D", :id => nil, :word_id => @word.id})
+      definition1.save()
+      definition2 = Definition.new({:name => "The starship commanded by the bald guy in that Trek Wars show", :id => nil, :word_id => @word.id})
+      definition2.save()
+      expect(Definition.all).to(eq([definition1, definition2]))
+
+    end
+  end
 
 end

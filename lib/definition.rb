@@ -29,8 +29,8 @@
     @@definitions[id]
   end
 
-  # def save
-  #   @@definitions[self.id] = Definition.new({ :def => self.def, :id => self.id, :word_id => self.word_id})
-  # end
+  def save
+    @@definitions[self.id] = Definition.new({ :name => self.name, :id => self.id, :word_id => self.word_id})
+  end
 
 end  
