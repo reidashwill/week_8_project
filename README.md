@@ -8,32 +8,32 @@
 
 __
 ## Specs
-| Specs  for Word class                                                          | Input         | Output |
-|--------------------------------------------------------------------------------|---------------|--------|
-| 1. Word class creates an object that is a word                                 | Word          | string |
-|                                                                                |               |        |
-| 2. the word class can clear all instances of word                              | word          | true   |
-|                                                                                |               |        |
-| 3. the word class can "Save" instances to a mock database held in @@words      | word          | true   |
-|                                                                                |               |        |
-| 6. instance of the word class can find all of its definitions                  |               |        |
+| Specs  for Word class                                                          | Input         | Output                          |
+|--------------------------------------------------------------------------------|---------------    |--------                     |
+| 1. Word class creates an object that is a word                                 | Word              | word                        |
+|                                                                                |                   |                             |
+| 2. the word class can clear all instances of word                              | Word.clear        | @@words = []                |
+|                                                                                |                   |                             |
+| 3. the word class can "Save" instances to a mock database held in @@words      | word.save         | @@words = [word]            |
+|                                                                                |                   |                             |
+| 4. instance of the word class can find all of its definitions                  | word.all          | @@words = [word, word2]     |
 
 
-| Specs for Definition class                                                     | Input         | Output |
-|--------------------------------------------------------------------------------|---------------|--------|
-| 1. Definition class creates an object that is a definition                     | Word          | string |
-|                                                                                |               |        |
-| 2. the definition class can clear all instances of definition                  | word          | true   |
-|                                                                                |               |        |
-| 3. the definition class can "Save" instances to a mock database held           | word          | true   | 
-|    in @@definitions                                                            |               |        |
-|                                                                                |               |        |
-| 4. instaces of the definition class can be updated                             | "word" "drow" | true   |
-|                                                                                |               |        |
-| 5. instances of the definition class can be deleted                            | "word" "hi"   | true   |
-|                                                                                |               |        |
-| 6. instance of the definition class can find which member of the               |               |        |
-|    word class it belongs to                                                    |               |        |
+| Specs for Definition class                                                     | Input             | Output                      |
+|--------------------------------------------------------------------------------|---------------    |--------                     |
+| 1. Definition class creates an object that is a definition                     | definition        | definition                  |
+|                                                                                |                   |                             |
+| 2. the definition class can clear all instances of definition                  | definition.clear  | @@definitions = [ ]         |
+|                                                                                |                   |                             |
+| 3. the definition class can "Save" instances to a mock database held           | definition.save   | @@definitions=[definition]  | 
+|    in @@definitions                                                            |                   |                             |
+|                                                                                |                   |                             |
+| 4. instaces of the definition class can be updated                             | definition.update | @@definitions=[updatedword] |
+|                                                                                |  (updatedword)    |                             |
+| 5. instances of the definition class can be deleted                            | definition.delete | @@definitions=[]            |
+|                                                                                |                   |                             |
+| 6. instance of the definition class can find which member of the               |                   |                             |
+|    word class it belongs to                                                    |                   |                             |
 
 
 
