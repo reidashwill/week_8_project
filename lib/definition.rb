@@ -33,7 +33,7 @@
     @@definitions[self.id] = Definition.new({ :name => self.name, :id => self.id, :word_id => self.word_id})
   end
 
-  def update(name, body)
+  def update(name)
     self.name = name
     self.save
   end
@@ -42,5 +42,5 @@
     @@definitions.delete(self.id)
   end
 
-  
+
 end  

@@ -62,4 +62,12 @@ describe '#Definition' do
     end
   end
 
+  describe('#update') do
+    it('updates the name property of a definition') do
+      definition1 = Definition.new({:name => "The USS Enterprise in a galaxy class starship of the United Federation of Planets.  It has a registered as NCC-1701-D", :id => nil, :word_id => @word.id})
+      definition1.save()
+      definition1.update("The USS Enterprise is the flagship of the United Federation of Planets")
+      expect(definition1.name).to(eq("The USS Enterprise is the flagship of the United Federation of Planets"))
+    end
+  end
 end
