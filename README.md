@@ -40,7 +40,7 @@ __
 
 ## Setup/Installation Requirements
 
-* _Navigate to https://github.com/reidashwill/week-8-project_
+* _Navigate to https://github.com/reidashwill/week_8_project_
 * _clone the respository to your local machine_
 * _navigate to the cloned directory and open in your text editor of choice to view code_
 * _run the command 'rspec' to run the suite of tests included_
