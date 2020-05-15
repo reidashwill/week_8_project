@@ -45,12 +45,14 @@ delete('/words/:id') do
   erb(:word)
 end
 
+
 get('/words/:id/:def_id') do
   @word = Word.find(params[:id].to_i)
   @definition = Definition.find(params[:def_id].to_i)
   erb(:definition)
 end 
 
+ 
 patch('/words/:id/:def_id') do
   @word = Word.find(params[:id].to_i)
   @definition = Definition.find(params[:def_id].to_i)
