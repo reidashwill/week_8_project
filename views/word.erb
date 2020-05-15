@@ -1,27 +1,30 @@
 <h1><%=@word.name%></h1>
+<div class="row">
+  <%# <div class="col-md-4"></div>
+  <div class="col-md-4"> %>
+    <form action='/words/<%=@word.id%>' method='post'>
+      <div class='form-group'>
+        <input id='d' name='definition_name' class='form-control' type='text' placeholder='Tell us what you think it means!'>
+        <button type='submit' class='btn'> Submit</button>
+      </div>
+    </form>  
 
-<form action='/words/<%=@word.id%>' method='post'>
-  <div class='form-group'>
-    <input id='d' name='definition_name' class='form-control' type='text' placeholder='Tell us what you think it means!'>
-    <button type='submit' class='btn-danger'> Submit</button>
-  </div>
-</form>  
+    <% if @definitions.any? %>
+      <ul>
+        <% @definitions.each do |definition| %>
+        <li><a href="/words/<%= @word.id %>/<%= definition.id %>"><%= definition.name %></a></li>
+      
+        <% end %>
+      <% end %>
+      <ul>
 
-<% if @definitions.any? %>
-  <ul>
-    <% @definitions.each do |definition| %>
-    <li><a href="/words/<%= @word.id %>/<%= definition.id %>"><%= definition.name %></a></li>
-  
-    <% end %>
-  <% end %>
-  <ul>
+    <form action="/words/<%= @word.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn">DELETE ALL DEFINITIONS</button>
+      <p> (for this word only.  cannot be undone!)</p>
+    </form>
 
-<form action="/words/<%= @word.id %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit" class="btn btn-danger">DELETE ALL DEFINITIONS</button>
-  <p> (for this word only.  cannot be undone!)</p>
-</form>
-
-
-
-<button type="btn" class="btn-success"><a href="/words">Home Page</a></button></a>
+    <button type="btn" class="btn"><a href="/words">Home Page</a></button></a>
+  <%# </div>  %>
+  <%# <div class="col-md-4"></div> %>
+</div>
