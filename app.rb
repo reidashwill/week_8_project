@@ -20,3 +20,18 @@ post('/words') do
   word.save()
   redirect to ('/')
 end
+
+get('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  @definitions = Definition.find_by_word(@word.id)
+  erb(:word)
+end
+
+post('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  name = params[:definition_name]
+  definition = Definition.new({:name => name, :id => nil, :word_id => @word.id})
+  definition.save()
+  @definitions = Definition.all
+  erb(:word)
+end

@@ -1,0 +1,15 @@
+<h1><%=@word.name%></h1>
+<% if @definitions.any? %>
+  <ul>
+    <% @definitions.each do |definition| %>
+    <li><%= definition.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action='/words/<%=@word.id%>' method='post'>
+  <div class='form-group'>
+    <input id='d' name='definition_name' class='form-control' type='text' placeholder='Tell us what you think it means!'>
+    <button type='submit' class='btn-danger'> Submit</button>
+  </div>
+</form>  
