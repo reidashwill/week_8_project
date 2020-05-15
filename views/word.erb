@@ -2,9 +2,10 @@
 <% if @definitions.any? %>
   <ul>
     <% @definitions.each do |definition| %>
-    <li><%= definition.name %></a></li>
-    <% end %>
+    <br>
+    <li><a href="/words/<%= @word.id %>/<%= definition.id %>"><%= definition.name %></a></li>
   </ul>
+<% end %>
 <% end %>
 
 <form action='/words/<%=@word.id%>' method='post'>
@@ -13,3 +14,6 @@
     <button type='submit' class='btn-danger'> Submit</button>
   </div>
 </form>  
+
+
+<button type="btn" class="btn-success"><a href="/words">Home Page</a></button></a>
