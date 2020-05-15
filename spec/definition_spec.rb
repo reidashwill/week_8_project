@@ -99,4 +99,19 @@ describe '#Definition' do
       expect(definition1.word()).to(eq(@word))
     end
   end
+
+  describe('self.delete_by_word') do
+    it(' deletes all definitions for one word') do
+      @word2 = Word.new({:name => "Defiant", :id => nil})
+      @word2.save()
+      definition1 = Definition.new({:name => "The USS Enterprise in a galaxy class starship of the United Federation of Planets.  It has a registered as NCC-1701-D", :id => nil, :word_id => @word.id})
+      definition1.save()
+      definition2 = Definition.new({:name => "The starship commanded by the bald guy in that Trek Wars show", :id => nil, :word_id => @word2.id})
+      definition2.save()
+      Definition.delete_by_word(@word2.id)
+      expect(Definition.all).to(eq([definition1]))
+  
+
+    end
+  end
 end

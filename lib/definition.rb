@@ -52,6 +52,11 @@
     definitions_array
   end
 
+  def self.delete_by_word(wrd_id)
+    self.find_by_word(wrd_id).each { |d| d.delete }
+  end
+
+
   def word
     Word.find(self.word_id)
   end
