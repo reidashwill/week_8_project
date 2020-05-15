@@ -47,6 +47,8 @@ __
 * _run the rommand "ruby app.rb" to open the app in sinatra_
 * _navigate your browser of choice to localhost:{whatever address sinatra is performing on.  usually 4567}_
 
+*_or navigave to https://agile-island-87878.herokuapp.com/ on your browser of choice to see it deployed!_
+
 
 
 ## Known Bugs
