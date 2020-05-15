@@ -1,0 +1,17 @@
+<h1> Welcome to the word definitions center for the learnings of the children</h1>
+
+<form action='/words' method='post'>
+  <div class='form-group'>
+    <input id='w' name='word_name' class='form-control' type='text' placeholder='Put your new word here!'>
+  </div>
+  <button type='submit' class='btn-danger'><h5>Submit Word!</h5></button>
+</form>
+
+<% if @words.any? %>
+<h3>Click on any of the words below to add a definition to it, and to see what everyone else thinks it means!</h3>
+  <ul>
+    <% @words.each do |word| %>
+    <li><a href="/words/<%= word.id %>"><%= word.name%></a></li>
+    <% end %>
+  </ul>
+<% end %>
