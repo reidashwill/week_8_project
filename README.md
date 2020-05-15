@@ -44,8 +44,8 @@ __
 * _clone the respository to your local machine_
 * _navigate to the cloned directory and open in your text editor of choice to view code_
 * _run the command 'rspec' to run the suite of tests included_
-* _run the rommand "ruby app.rb" to open the app in sinatra
-* _navigate your browser of choice to localhost:{whatever address sinatra is performing on.  usually 4567}
+* _run the rommand "ruby app.rb" to open the app in sinatra_
+* _navigate your browser of choice to localhost:{whatever address sinatra is performing on.  usually 4567}_
 
 
 
