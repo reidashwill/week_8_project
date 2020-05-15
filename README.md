@@ -6,6 +6,7 @@
 
 ## Description
 
+This app allows the user to create words, which are added to a mock database.  The user can then add, edit or delete definitions for those words.
 __
 ## Specs
 | Specs  for Word class                                                          | Input         | Output                          |
@@ -43,6 +44,8 @@ __
 * _clone the respository to your local machine_
 * _navigate to the cloned directory and open in your text editor of choice to view code_
 * _run the command 'rspec' to run the suite of tests included_
+* _run the rommand "ruby app.rb" to open the app in sinatra
+* _navigate your browser of choice to localhost:{whatever address sinatra is performing on.  usually 4567}
 
 
 
@@ -56,11 +59,12 @@ _Please reach out with any issues through https://github.com/reidashwill/week-8-
 
 ## Technologies Used
 
-_Ruby_
-_Rspec_
-_Capybara_
-HTML (erb)
-Bootstrap
+* _Ruby_
+* _Rspec_
+* _Capybara_
+* _Sinatra_
+* _HTML (erb)_
+* _Bootstrap_
 
 ### License
 

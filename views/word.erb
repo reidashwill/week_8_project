@@ -1,12 +1,4 @@
 <h1><%=@word.name%></h1>
-<% if @definitions.any? %>
-  <ul>
-    <% @definitions.each do |definition| %>
-    <br>
-    <li><a href="/words/<%= @word.id %>/<%= definition.id %>"><%= definition.name %></a></li>
-  </ul>
-<% end %>
-<% end %>
 
 <form action='/words/<%=@word.id%>' method='post'>
   <div class='form-group'>
@@ -15,12 +7,20 @@
   </div>
 </form>  
 
+<% if @definitions.any? %>
+  <ul>
+    <% @definitions.each do |definition| %>
+    <li><a href="/words/<%= @word.id %>/<%= definition.id %>"><%= definition.name %></a></li>
+  
+    <% end %>
+  <% end %>
+  <ul>
+
 <form action="/words/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
-
   <button type="submit" class="btn btn-danger">DELETE ALL DEFINITIONS</button>
+  <p> (for this word only.  cannot be undone!)</p>
 </form>
-<p> (for this word only.  cannot be undone!)</p>
 
 
 
