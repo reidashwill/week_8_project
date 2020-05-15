@@ -70,4 +70,15 @@ describe '#Definition' do
       expect(definition1.name).to(eq("The USS Enterprise is the flagship of the United Federation of Planets"))
     end
   end
+
+  describe('#delete') do
+    it('deletes a definition by id') do
+      definition1 = Definition.new({:name => "The USS Enterprise in a galaxy class starship of the United Federation of Planets.  It has a registered as NCC-1701-D", :id => nil, :word_id => @word.id})
+      definition1.save()
+      definition2 = Definition.new({:name => "The starship commanded by the bald guy in that Trek Wars show", :id => nil, :word_id => @word.id})
+      definition2.save()
+      definition1.delete()
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end
