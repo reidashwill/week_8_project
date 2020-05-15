@@ -1,7 +1,7 @@
 class Word
 
-  attr_reader :id, :name
-
+  attr_reader :id
+  attr_accessor :name
   @@total_rows = 0
   @@words = {}
 
@@ -29,5 +29,14 @@ class Word
 
   def self.find(id)
     @@words[id]
+  end
+
+  def update(name)
+    self.name = name
+    self.save()
+  end
+
+  def delete
+    @@words.delete(self.id)
   end
 end  
