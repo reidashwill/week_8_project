@@ -15,5 +15,12 @@
   </div>
 </form>  
 
+<form action="/words/<%= @word.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit" class="btn btn-danger">DELETE ALL DEFINITIONS</button>
+  <p> (for this word only.  cannot be undone!)</p>
+</form>
+
 
 <button type="btn" class="btn-success"><a href="/words">Home Page</a></button></a>

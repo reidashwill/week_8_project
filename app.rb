@@ -36,6 +36,12 @@ post('/words/:id') do
   erb(:word)
 end
 
+delete('words/:id') do
+    @word = Word.find(params[:id].to_i)
+    Definition.delete_by_word(@word.id)
+    redirect to ('/')
+end
+
 
 
 get('/words/:id/:def_id') do
