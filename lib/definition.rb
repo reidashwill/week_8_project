@@ -42,5 +42,15 @@
     @@definitions.delete(self.id)
   end
 
+  def self.find_by_word(wrd_id)
+    definitions_array = []
+    @@definitions.values.each do |definition|
+      if definition.word_id == wrd_id
+        definitions_array.push(definition)
+      end
+    end
+    definitions_array
+  end
+
 
 end  

@@ -96,7 +96,7 @@ describe '#Definition' do
     it('finds the word a definition belongs to') do
       definition1 = Definition.new({:name => "The USS Enterprise in a galaxy class starship of the United Federation of Planets.  It has a registered as NCC-1701-D", :id => nil, :word_id => @word.id})
       definition1.save()
-      expect(difinition1.word()).to(eq(@word))
+      expect(definition1.word()).to(eq(@word))
     end
   end
 end
